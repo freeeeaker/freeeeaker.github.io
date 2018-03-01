@@ -5,57 +5,50 @@ var node = document.getElementById('node')
 var add = document.getElementById('add')
 var remove = document.getElementById('remove')
 
-var str = 'aaa阿斯<mention id="sfd">@蒂芬阿斯蒂芬</mention>阿斯蒂芬阿斯蒂芬asd发1234567890$\n' 
-        + 'bbb阿斯蒂芬阿斯蒂$\n'
-        + '芬阿<a href="javascript:;"><span class="c"></span>斯蒂芬阿斯end</a>\n'
+var str = 'this is the first paragraph<mention id="sfd">@github</mention>, it not only has plain text\n' 
+        + 'this is the second paragraph，break line by \\n\n'
+        + 'this is the third<a href="https://github.com"><span class="c"></span>github.com</a>, width padding and margin\n'
         + '\n'
         + '\n'
         + '\n'
-        + '蒂芬阿斯蒂芬瑟瑟阿道夫阿as😆😆😆d发斯蒂芬撒$\n'
-        + '旦法阿斯<span class="c"></span>什么什么😆😆😆😆😆😆\n'
-        + 'ddd<mention id="sfd">@蒂芬阿112😆😆😆</mention>$\n'
-        + '\n'
-        + '\n'
-        + '阿斯蒂芬阿1<mention>斯蒂芬😆😆😆阿阿'
+        + 'this is the fourth\n'
+        + 'you can use emoji<span class="c"></span>😆😆😆😆😆😆😆😆\n'
+        + '😆😆😆😆'
 
-origin.innerHTML = str
+// origin.innerHTML = str
 
 var maxWidth  = 360
 
-textOverflow({ 
-  node: app,
+new textOverflow(app, { 
   str,
-  addedStr: '...<a href="javascript:;">点击查看全文</a>',
+  addedStr: '...<a href="javascript:;">more</a>',
   maxLine: 7,
   maxWidth,
   emptyLine: true
 })
 
-textOverflow({ 
-  node: app1,
+textOverflow(app1, { 
   str,
-  addedStr: '...<a href="javascript:;">点击查看全文</a>',
+  addedStr: '...<a href="javascript:;">more</a>',
   maxLine: 7,
   maxWidth,
   emptyLine: false
 })
 
 var userList = [
-  '哎哎哎',
-  '不不不',
+  '点击有变化哦',
   // '嘎嘎嘎',
   // '嘿嘿嘿',
   '😆😆😆',
   '😎😎😎',
-  'xixixixi',
+  'click it',
   '吼 吼 吼',
   'enenen',
   'gogogo',
   '哦哦哦'
 ];
 
-textOverflow({
-  node,
+textOverflow(node, {
   str: convertUserListToHTML(userList),
   addedStr: `等${userList.length}觉得很赞`,
   maxLine: 2,
@@ -68,8 +61,7 @@ add.onclick = function () {
   num++
   userList.push(`哟哟哟${num}`)
   var str = convertUserListToHTML(userList)
-  textOverflow({
-    node,
+  textOverflow(node, {
     str,
     addedStr: `等${userList.length}人觉得很赞`,
     maxLine: 2,
@@ -82,8 +74,7 @@ remove.onclick = function () {
   num--
   userList.pop()
   var str = convertUserListToHTML(userList)
-  textOverflow({
-    node,
+  textOverflow(node, {
     str,
     addedStr: `等${userList.length}人觉得很赞`,
     maxLine: 2,
