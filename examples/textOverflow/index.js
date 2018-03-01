@@ -19,7 +19,7 @@ var str = 'this is the first paragraph<mention id="sfd">@github</mention>, it no
 
 var maxWidth  = 360
 
-new textOverflow(app, { 
+textOverflow(app, { 
   str,
   addedStr: '...<a href="javascript:;">more</a>',
   maxLine: 7,
