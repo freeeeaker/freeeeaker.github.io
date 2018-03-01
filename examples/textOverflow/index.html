@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-  <title>text-overflow</title>
+  <title>Document</title>
   <style>
     .test {
       width: 360px;
@@ -45,14 +44,14 @@
 </head>
 <body>
   <div class="box">
-    <h3>原文</h3>
+    <h3>原文, original text</h3>
     <div id="origin" class="test"></div>
-    <h3>最大7行截断后</h3>
-    <h5>不过滤空行</h5>
+    <h3>最大7行截断后, maxLine: 7</h3>
+    <h5>不过滤空行, with empty line</h5>
     <div id="app" class="test"></div>
-    <h5>过滤空行</h5>
+    <h5>过滤空行, without empty line</h5>
     <div id="app1" class="test"></div>
-    <h3>最大2行截断后</h3>
+    <h3>最大2行截断后, maxline: 2</h3>
     <button id="add">点赞</button><button id="remove">取消点赞</button>
     <div id="node" class="test"></div>
   </div>
